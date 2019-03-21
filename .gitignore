@@ -1,4 +1,7 @@
 /node_modules
-
+/package.json
+/package-lock.json
+/backend/package-lock.json
+/client/package-lock.json
 /backend/node_modules
 /client/node_modules
