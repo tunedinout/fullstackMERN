@@ -2,14 +2,25 @@
   "name": "fullstack_app",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "concurrently \"cd backend && nodemon src/server.js\" \"cd client && npm start\""
+  },
   "keywords": [],
   "author": "narottamkrjha",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "concurrently": "^4.1.0",
     "cors": "^2.8.5"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tunedinout/fullstackMERN.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tunedinout/fullstackMERN/issues"
+  },
+  "homepage": "https://github.com/tunedinout/fullstackMERN#readme",
   "description": ""
 }

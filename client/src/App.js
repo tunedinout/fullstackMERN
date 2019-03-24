@@ -43,7 +43,7 @@ class App extends Component {
   // our first get method that uses our backend api to
   // fetch data from our data base
   getDataFromDb = () => {
-    fetch("http://localhost:3001/api/getData", { mode: "no-cors" })
+    fetch("http://localhost:3001/api/getData")
       .then(data => data.json())
       .then(res => this.setState({ data: res.data }));
   };
@@ -56,11 +56,18 @@ class App extends Component {
     while (currentIds.includes(idToBeAdded)) {
       ++idToBeAdded;
     }
-
-    axios.post("http://localhost:3001/api/putData", {
-      id: idToBeAdded,
-      message: message
+    // var headers = {
+    //   "Access-Control-Allow-Origin": "*"
+    // };
+    const data = { id: idToBeAdded, message: message };
+    fetch("http://localhost:3001/api/putData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
     });
+    //console.log(x);
   };
 
   // our delete method that uses our backend api
